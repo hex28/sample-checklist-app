@@ -1,0 +1,20 @@
+@import '../../sass/mixins';
+@import '../../sass/variables';
+
+@mixin container-bp {
+    @include breakpoint(sm) {
+        width: $breakpoint_sm;
+    }
+    @include breakpoint(md) {
+        width: $breakpoint_md;
+    }
+    @include breakpoint(lg) {
+        width: $breakpoint_lg;
+    }
+}
+
+.container {
+    width: 100%;
+    margin: 0 auto;
+    @include container-bp();
+}

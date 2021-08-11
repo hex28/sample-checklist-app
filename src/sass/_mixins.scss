@@ -1,0 +1,48 @@
+@import 'variables.scss';
+
+@mixin breakpoint($size) {
+    @if $size == 'xs' {
+        @media (min-width: $breakpoint_xs) { 
+            @content; 
+        }
+      } @else if $size == 'sm' {
+        @media (min-width: $breakpoint_sm) { 
+            @content; 
+        }
+      } @else if $size == 'md' {
+        @media (min-width: $breakpoint_md) { 
+            @content; 
+        }
+      } @else if $size == 'lg' {
+        @media (min-width: $breakpoint_lg) { 
+            @content; 
+        }
+      }
+      @else {
+        @error "Unknown size: {$size}.";
+      }
+}
+
+@mixin button($palette: 'primary') {
+  display: inline-block;
+  padding: 0.3em 1.2em;
+  margin: 0 0.3em 0.3em 0;
+  border: none;
+  border-radius: 2em;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: 'Roboto',sans-serif;
+  font-weight: bold;
+  color: #FFFFFF;
+  text-align: center;
+  transition: all 0.2s;
+  line-height: 1.4;
+  cursor: pointer;
+  @if $palette == 'primary' {
+    background-color: $color-primary;
+    &:hover {
+      background-color: $color-primary-hover;
+    }
+  }
+
+}

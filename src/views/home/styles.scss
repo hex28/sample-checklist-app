@@ -1,0 +1,124 @@
+@import '../../sass/mixins';
+
+.header {
+    padding: 8px;
+    display: flex;
+    justify-content: space-between;
+
+    .user {
+        font-size: 2rem;
+        font-weight: bold;
+    }
+
+}
+
+.btn {
+    @include button(primary);
+}
+
+.btn-add {
+    height: 36px;
+}
+
+.btn-action {
+    width: 45px;
+    height: 26px;
+    text-align: center;
+    padding: 0em 1em;
+    margin-top: 8px;
+    font-size: 16px;
+}
+
+
+.checklist {
+    ul {
+        list-style-type: none;
+    }
+
+    li {
+        display: flex;
+        justify-content: space-between;
+        padding: 8px 0;
+        border-bottom: 1px solid #BBB;
+        div {
+            width: 100%;
+            padding-right: 24px;
+            line-height: 1.8;
+            .checkmark-container {
+                display: block;
+                position: relative;
+                padding-left: 4rem;
+                margin-bottom: 12px;
+                cursor: pointer;
+                font-size: 16px;
+                -webkit-user-select: none;
+                -moz-user-select: none;
+                -ms-user-select: none;
+                user-select: none;
+                margin-top: 8px;
+                input[type="checkbox"] {
+                    position: absolute;
+                    opacity: 0;
+                    cursor: pointer;
+                    height: 0;
+                    width: 0;
+
+                    &:checked ~ .checkmark-checkbox {
+                        background-color: $color-primary;
+                        border-color: $color-primary;
+                        &::after{
+                            display: block;
+                        }
+                    }
+
+                }
+
+                .checkmark-checkbox {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    height: 24px;
+                    width: 24px;
+                    border: 1px solid #BBB;
+                    margin-top:2px;
+                    &:hover {
+                        background-color: #CCC;
+                    }
+                    &:after {
+                        content: "";
+                        position: absolute;
+                        display: none;
+                        left: 9px;
+                        top: 4px;
+                        width: 5px;
+                        height: 10px;
+                        border: solid white;
+                        border-width: 0 3px 3px 0;
+                        -webkit-transform: rotate(45deg);
+                        -ms-transform: rotate(45deg);
+                        transform: rotate(45deg);
+                    }
+
+                }
+
+            }
+
+            .checkmark-container.new-item {
+                input[type="text"] {
+                    width: 100%;
+                    font-size: 16px;
+                    border:none;
+                    outline:none;
+                }
+            }
+        
+            span {
+                margin-left: 8px;
+                vertical-align: super;
+            }
+
+        }
+
+    }
+
+}

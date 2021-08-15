@@ -1,15 +1,31 @@
 @import '../../sass/mixins';
 
 .header {
-    padding: 8px;
-    display: flex;
-    justify-content: space-between;
 
-    .user {
-        font-size: 2rem;
-        font-weight: bold;
+    display: grid;
+    grid-template-columns: minmax((calc(100% - 72px), auto)) 1fr 1fr;
+
+    .header-image {
+       img {
+            border-radius: 50%;
+       }
     }
 
+    .header-name {
+        padding: 8px;
+        line-height: 1.5;
+        .user {
+            font-size: 2rem;
+            font-weight: bold;
+        }
+    }
+
+}
+
+.add {
+    display: flex;
+    justify-content: flex-end;
+    margin: 12px 0;
 }
 
 .btn {

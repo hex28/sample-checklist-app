@@ -2,11 +2,11 @@ import request from '../request';
 
 
 //used for mock data to add to reqres which returns only a token.
-let mockUserData = {
-    id: 24,
-    firstName: 'Julian',
-    lastName: 'Casablancas'
-}
+// let mockUserData = {
+//     id: 24,
+//     firstName: 'Julian',
+//     lastName: 'Casablancas'
+// }
 
 /*
 *
@@ -29,8 +29,16 @@ export const login = (email: string, password:string): Promise<any> => {
     .then((res:Record<string, any>) => {
         return {
             ...res,
-            email: email,
-            ...mockUserData
+            // email: email,
+            // ...mockUserData
         }
     })
 }
+
+export const getUser = () => 
+    request('https://randomuser.me/api/')
+        .then((res: any) => ({
+            ...res.results[0]
+        }))
+
+

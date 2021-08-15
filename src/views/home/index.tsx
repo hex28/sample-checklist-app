@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState, ChangeEvent } from 'react';
+import React, {useState, ChangeEvent } from 'react';
 import {useAuthStore} from '../../contexts/auth';
 import { useCheckList } from '../../contexts/checklist';
 import './styles.scss';
@@ -12,7 +12,7 @@ const Home = (props: any) => {
     const [newItem, setNewItem] = useState<CheckedItems | undefined>(undefined)
     const authStore = useAuthStore()
     const checkListStore = useCheckList()
-    const {firstName, lastName, email} = authStore.state
+    const {firstName, lastName, email, picture} = authStore.state
     let userName = email;
     if (firstName && firstName !== null && typeof firstName == 'string') {
         userName = firstName
@@ -77,14 +77,22 @@ const Home = (props: any) => {
 
     return (
         <>
-            <div id="header" className="header">
-                <div className="user">
-                    {userName}
+            <div className="header">
+                <div id="header-name" className="header-name">
+                    <div className="user">
+                        {userName}
+                    </div>
                 </div>
-
-                <button className="btn btn-add" onClick={createNewItem}>
-                    Add
-                </button>
+                <div className="header-image">
+                    {
+                        picture ? 
+                            <a href="https://randomuser.me" target="_blank" rel="noopener noreferrer">
+                                <img src={picture.medium} alt={picture.medium} />
+                            </a>
+                            :
+                            <></>
+                    }
+                </div>
             </div>
             <div className="checklist">
                 <ul>
@@ -122,6 +130,11 @@ const Home = (props: any) => {
                     </li>
                 }
                 </ul>
+                <div className="add">
+                    <button className="btn btn-add" onClick={createNewItem}>
+                        Add
+                    </button>
+                </div>
             </div>
         </>
     )

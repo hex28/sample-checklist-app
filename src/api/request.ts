@@ -11,7 +11,12 @@ const request = (
            headers: options.headers || {},
            body: options.body
        } : undefined)
-       .then(res => res.json())
+       .then(res => {
+           if (res.status !== 200) {
+               throw new Error('encountered login issue')
+           }
+           return res.json()
+        })
 }
 
 export default request

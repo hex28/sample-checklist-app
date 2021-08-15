@@ -15,12 +15,19 @@ export type State = {
 
 }
 
+export type Picture = {
+    large: string,
+    medium: string,
+    thumbnail: string
+}
+
 export interface Auth {
     login: boolean,
-    id: number,
+    id: string,
     email: string,
     firstName?: string,
     lastName?: string,
+    picture?: Picture
 }
 
 export interface CheckItems {

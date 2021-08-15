@@ -10,7 +10,7 @@ beforeEach(() => {
 
 test("make a request", async() => {
 
-    let requestData = await request('https://www.testsite.com')
+    await request('https://www.testsite.com')
 
     expect(request).toHaveBeenCalled();
 });

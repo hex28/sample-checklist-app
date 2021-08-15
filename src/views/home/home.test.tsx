@@ -54,7 +54,7 @@ describe('Header name', () => {
 
 describe('Add button', () => {
   test('Add button adds a new input on click', async () => {
-     const {baseElement, findByRole, findByPlaceholderText} = render(<HomeComponent authValues={{email: "test@gmail.com"}} />)
+     const {baseElement} = render(<HomeComponent authValues={{email: "test@gmail.com"}} />)
      const button = baseElement.querySelector('.btn-add') as HTMLButtonElement
      fireEvent.click(button)
      let newInput = baseElement.querySelector('input[type=text]') as HTMLInputElement
@@ -66,7 +66,7 @@ describe('Add button', () => {
   })
 
   test('Change input placeholder text', ()=> {
-    const {debug, baseElement, getByText} = render(<HomeComponent authValues={{email: "test@gmail.com"}} />)
+    const {baseElement} = render(<HomeComponent authValues={{email: "test@gmail.com"}} />)
     const button = baseElement.querySelector('.btn-add') as HTMLButtonElement
     fireEvent.click(button)
     let newInput = baseElement.querySelector('input[type=text]') as HTMLInputElement

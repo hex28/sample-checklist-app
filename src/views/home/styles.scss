@@ -17,7 +17,13 @@
         .user {
             font-size: 2rem;
             font-weight: bold;
+            @include breakpoint(xs) {
+                text-overflow: ellipsis;
+                overflow: hidden;
+                white-space: nowrap;
+            }
         }
+
     }
 
 }

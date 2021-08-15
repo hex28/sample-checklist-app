@@ -9,7 +9,10 @@ interface CheckedItems {
 }
 
 const Home = (props: any) => {
-    const [newItem, setNewItem] = useState<CheckedItems | undefined>(undefined)
+    const [newItem, setNewItem] = useState<CheckedItems | undefined>({
+        title: "",
+        completed: false
+    })
     const authStore = useAuthStore()
     const checkListStore = useCheckList()
     const {firstName, lastName, email, picture} = authStore.state

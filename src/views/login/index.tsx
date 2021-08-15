@@ -68,6 +68,9 @@ const Login = (props:any) => {
                 </label>
                 <input className="submit" type="submit" value="Submit" />
             </form>
+            <div className="hint">
+                <p>For this sample you can use any email/password combination :)</p>
+            </div>
         </>
     )
 }

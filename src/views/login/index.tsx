@@ -31,6 +31,11 @@ const Login = (props:any) => {
     const handleSubmit = async (e: MouseEvent<HTMLFormElement>) => {
         e.preventDefault()
 
+        if (userInput.email === '' || userInput.password === '') {
+            alert('Must have an email and password')
+            return;
+        }
+
         try {
             await AuthRequest.login(userInput.email, userInput.password)
             let profile = await AuthRequest.getUser()

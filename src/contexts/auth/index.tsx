@@ -1,5 +1,5 @@
-import React, {createContext, useContext, useReducer} from 'react';
-import {Auth, Action, Dispatch, ProviderProps} from '../../types/contexts';
+import React, {createContext, useReducer} from 'react';
+import {Auth, Dispatch, ProviderProps} from '../../types/contexts';
 import {AuthReducer, initialState} from './reducer';
 
 

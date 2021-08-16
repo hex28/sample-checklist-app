@@ -49,14 +49,13 @@ const Login = (props:any) => {
             })
             history.push('/')
         } catch (error) {
-            console.log(error)
             alert('We encountered a problem :(. Please try again')
         }
 
     }
 
     return (
-        <>
+        <div>
             <form onSubmit={handleSubmit}>
                 <label>
                     email:
@@ -71,7 +70,7 @@ const Login = (props:any) => {
             <div className="hint">
                 <p>For this sample you can use any email/password combination :)</p>
             </div>
-        </>
+        </div>
     )
 }
 

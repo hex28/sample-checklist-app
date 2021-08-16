@@ -124,10 +124,10 @@ const Home = (props: any) => {
                             <span className="checkmark-checkbox"></span>
                             </label>
                         </div>
-                        <button className="btn btn-action" onClick={addItem}>
+                        <button id="plus-button" className="btn btn-action" onClick={addItem}>
                             +
                         </button>
-                        <button className="btn btn-action" onClick={deleteNewItem}>
+                        <button id="remove-button" className="btn btn-action" onClick={deleteNewItem}>
                             x
                         </button>
                     </li>

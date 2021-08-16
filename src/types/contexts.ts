@@ -11,9 +11,6 @@ export interface Action {
 
 export type Dispatch = (action: Action) => void
 
-export type State = {
-
-}
 
 export type Picture = {
     large: string,

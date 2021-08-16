@@ -69,6 +69,7 @@ const Login = (props:any) => {
             </form>
             <div className="hint">
                 <p>For this sample you can use any email/password combination :)</p>
+                <p>View the repo at <a href="https://github.com/hex28/sample-cheklist-app" target="_blank" rel="noopener non">https://github.com/hex28/sample-cheklist-app</a></p>
             </div>
         </div>
     )

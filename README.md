@@ -21,6 +21,6 @@ As this is a controlled sample, you can use any email / password to simulate aut
 
 ### Note
 
-This app uses 2 public APIs:
-[https://reqres.in](https://reqres.in)
+This app uses 2 public APIs:  
+[https://reqres.in](https://reqres.in)  
 [https://randomuser.me](https://randomuser.me)
